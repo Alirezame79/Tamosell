@@ -1,0 +1,9 @@
+
+@font-face {
+  font-family: 'madimione';
+  src: url(../public/fonts/madimione.ttf);
+}
+
+.app_title {
+  font-family: 'madimione';
+}
