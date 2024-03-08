@@ -7,3 +7,31 @@
 .app_title {
   font-family: 'madimione';
 }
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0.5;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.enter_page_animation {
+  animation: fadeInAnimation ease 0.5s;
+  /* animation-iteration-count: 1; */
+  /* animation-fill-mode: forwards; */
+}
+
+.dropdown_account_menu {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown_account_opener:hover .dropdown_account_menu{
+  display: block;
+}
