@@ -20,7 +20,7 @@ export default function SignUp () {
 
   return (
     <div className="enter_page_animation min-h-screen flex flex-col items-center justify-between mt-5 p-8 sm:p-12 md:p-16 lg:p-24 ">
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col">
+      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 flex flex-col">
         <div className="mb-5">
           <label className="block text-gray-700 lg:text-sm text-xs font-bold mb-2" htmlFor="name">
             Name
@@ -53,7 +53,7 @@ export default function SignUp () {
         </div>
         <Button className='m-5 lg:w-4/5 w-3/5 self-center lg:text-base text-sm' type='primary'>Sign Up</Button>
         <p className="-mb-5 self-center text-orange-900 hover:text-orange-700 underline text-xs lg:text-sm"><Link href='/signin'>I already have an account</Link></p>
-      </div>
+      </form>
     </div>
   )
 }

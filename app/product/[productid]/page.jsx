@@ -36,7 +36,7 @@ export default function productId() {
     )
   } else {                                          // Desktop Mode
     return (
-      <div className="min-h-full flex flex-col gap-10 my-20 mx-40 p-10 justify-between bg-orange-300 rounded-lg">
+      <div className="min-h-full flex flex-col gap-10 my-20 mx-40 p-10 justify-between bg-orange-200 rounded-lg">
         <div className="flex">
           <Image
             className="w-2/5 bg-orange-100 rounded-lg"
@@ -46,7 +46,7 @@ export default function productId() {
           <div className="flex flex-col w-3/5 gap-5 px-20 py-10">
             <h2 className="text-4xl font-bold">Product Name</h2>
             <h3 className="text-2xl">Price</h3>
-            <h3 className="text-base bg-orange-400 p-1 rounded-lg self-start">Tag</h3>
+            <h3 className="text-base bg-orange-300 p-1 rounded-lg self-start">Tag</h3>
             <h3 className="text-lg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam illo perspiciatis quidem excepturi possimus sunt fugiat natus incidunt officia dolorum eligendi iusto, ullam voluptatum quibusdam quia magni aut autem ut quam numquam reiciendis! Sint sit atque ut impedit, in dolore quisquam minima est quibusdam, cupiditate cumque labore ab ex illum?</h3>
           </div>
         </div>
