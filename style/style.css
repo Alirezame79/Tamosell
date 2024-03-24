@@ -1,3 +1,6 @@
+body:not(.app_title) {
+  font-family: sans-serif;
+}
 
 @font-face {
   font-family: 'madimione';
