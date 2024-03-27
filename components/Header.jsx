@@ -5,14 +5,23 @@ import Button from './ui/Button'
 import './../style/style.css'
 import Link from 'next/link'
 import { useEffect, useContext } from 'react'
-import { ProfileContext } from '@/context/profileContext'
+import ProfileContext from '@/context/profileContext'
+import { useRouter } from 'next/navigation'
 
 export default function Header () {
   const {authentication, setAuthentication} = useContext(ProfileContext);
+  const router = useRouter()
+
+  useEffect(() => {
+    if (localStorage.getItem("authentication") === '1') {
+      setAuthentication(1);
+    }
+  }, [])
 
   function logOutClicked() {
     setAuthentication(0)
     localStorage.setItem("authentication", 0);
+    router.push('/')
   }
 
   return (
@@ -30,8 +39,8 @@ export default function Header () {
 
         <div className='dropdown_account_menu p-1.5 -ml-28 md:-ml-36 w-40 md:w-48 bg-orange-50 rounded-lg gap-2'>
           <Link className='p-2 rounded hover:bg-orange-100 cursor-pointer block text-sm md:text-base' href='/account'>My Account</Link>
-          <Link className='p-2 rounded hover:bg-orange-100 cursor-pointer block text-sm md:text-base' href='/account'>Add New Product</Link>
-          <Link className='p-2 rounded hover:bg-orange-100 cursor-pointer block text-sm md:text-base' href='/account'>Favorite</Link>
+          <Link className='p-2 rounded hover:bg-orange-100 cursor-pointer block text-sm md:text-base' href='/addproduct'>Add New Product</Link>
+          <Link className='p-2 rounded hover:bg-orange-100 cursor-pointer block text-sm md:text-base' href='/favorite'>Favorite</Link>
           <Button className='mt-4 mb-1.5 mx-3 md:mx-5 bg-white w-4/5 text-sm md:text-base' onClick={logOutClicked} type='secondary'>Sign Out</Button>
         </div>
       </div> :

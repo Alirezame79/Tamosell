@@ -5,11 +5,14 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import toast, { Toaster } from "react-hot-toast";
 import BASE_URL from '@/public/api/BaseUrl';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Home() {
   const [products, setproducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const router = useRouter()
 
   useEffect(() => {
     async function fetchProducts() {
@@ -35,7 +38,7 @@ export default function Home() {
 
     fetchProducts();
   }, [])
-  
+
   return (
     <main>
       <Toaster />
@@ -47,7 +50,9 @@ export default function Home() {
       <div className="min-h-screen grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-content-start">
         {products.map((product) => {
           return (
-            <ProductCard key={product.ID} attribute={product}/>
+            <Link key={product.ID} href={'/product/' + product.ID + '/'}>
+              <ProductCard onClick={() => {}} attribute={product}/>
+            </Link>
           ) 
         })}
       </div>

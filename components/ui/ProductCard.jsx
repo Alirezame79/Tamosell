@@ -1,13 +1,13 @@
 import Image from "next/image"
 
-export default function ProductCard( {attribute} ) {
+export default function ProductCard( {attribute, onClick} ) {
 
   function currencyFormat(num) {
     return '$ ' + num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
 
   return (
-    <div className="bg-orange-200 flex gap-3 p-3 m-3 h-24 md:h-28 lg:h-32 rounded cursor-pointer">
+    <div className="bg-orange-200 flex gap-3 p-3 m-3 h-24 md:h-28 lg:h-32 rounded cursor-pointer" onClick={onClick}>
       <img className="bg-orange-50 h-full w-16 md:w-20 lg:w-24 rounded object-cover bg-center bg-cover"
         src={attribute.ImageUrl}
         alt="product image"

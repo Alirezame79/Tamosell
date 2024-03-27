@@ -1,6 +1,6 @@
 'use client'
 import { useRef, useState, useContext } from "react";
-import { ProfileContext } from "@/context/profileContext";
+import ProfileContext from "@/context/profileContext";
 import Link from "next/link";
 import axios from "axios";
 import BASE_URL from "@/public/api/BaseUrl";
@@ -37,7 +37,7 @@ export default function SignIn () {
 
   const fetchRequest = async () => {
     try {
-      const tokenResponse = await axios.post(BASE_URL + "sign-in/", {
+      const response = await axios.post(BASE_URL + "sign-in/", {
         Username: usernameRef.current.value,
         Password: passwordRef.current.value
       }, {
@@ -45,9 +45,9 @@ export default function SignIn () {
           "Content-Type": "application/json",
         }
       })
-      console.log(tokenResponse)
+      console.log(response)
 
-      if (tokenResponse.status === 200) {
+      if (response.status === 200) {
         setAuthentication(1);
         localStorage.setItem("authentication", 1);
         console.log("Granted")

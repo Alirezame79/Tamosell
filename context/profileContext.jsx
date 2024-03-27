@@ -1,5 +1,23 @@
 'use client';
 
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-export const ProfileContext = createContext();
+const ProfileContext = createContext();
+
+function Provider({children}) {
+  const [authentication, setAuthentication] = useState("0");
+
+  const valueToShare = {
+    authentication: authentication,
+    setAuthentication: setAuthentication
+  }
+
+  return (
+    <ProfileContext.Provider value={valueToShare}>
+      {children}
+    </ProfileContext.Provider>
+  )
+}
+
+export {Provider}
+export default ProfileContext

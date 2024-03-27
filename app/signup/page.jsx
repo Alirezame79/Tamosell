@@ -8,7 +8,7 @@ import axios from "axios";
 import BASE_URL from "@/public/api/BaseUrl";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { ProfileContext } from "@/context/profileContext";
+import ProfileContext from "@/context/profileContext";
 
 export default function SignUp () {
   const usernameRef = useRef(null);
@@ -62,7 +62,7 @@ export default function SignUp () {
 
   const fetchRequest = async () => {
     try {
-      const tokenResponse = await axios.post(BASE_URL + "sign-up/", {
+      const response = await axios.post(BASE_URL + "sign-up/", {
         Username: usernameRef.current.value,
         Email: emailRef.current.value,
         Phone: phoneRef.current.value,
@@ -72,9 +72,9 @@ export default function SignUp () {
           "Content-Type": "application/json",
         }
       })
-      console.log(tokenResponse)
+      console.log(response)
 
-      if (tokenResponse.status === 200) {
+      if (response.status === 200) {
         setAuthentication(1);
         localStorage.setItem("authentication", 1);
         console.log("Granted")

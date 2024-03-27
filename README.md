@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tamosell
 
-## Getting Started
+A very simple app for selling your stuff. Maybe sth like `Divar`.
 
-First, run the development server:
+## Tools
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+this app is make by:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next 14
+- Tailwind
+- Context API
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Challenges
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Experts know that in a real app, all the parts are challeges. But of course I have sth to tell you in this section.
 
-## Learn More
+### 1. App Routing:
 
-To learn more about Next.js, take a look at the following resources:
+For the first time I use `App Routing` and I should say that it was awesome. use static and dynamic routes, both were amazing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I use dynamic route for each product page: `product/[id]`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 2. Tailwind:
 
-## Deploy on Vercel
+I use tailwind for the first time too. It improves my performance and speed. no need to write long css codes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Default Image:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+you may need to fetch an image from server. but what will happen if image's url will be wrong or not complete. the image will crash. or on the other hand, an account don't have a profile, what should we do?
+
+so I use default image for users default profile image.

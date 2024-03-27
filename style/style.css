@@ -38,3 +38,7 @@ body:not(.app_title) {
 .dropdown_account_opener:hover .dropdown_account_menu{
   display: block;
 }
+
+.max_height {
+  max-height: 600px;
+}
