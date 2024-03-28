@@ -8,6 +8,7 @@ this app is make by:
 
 - Next 14
 - Tailwind
+- axios
 - Context API
 
 ## Challenges
@@ -29,3 +30,9 @@ I use tailwind for the first time too. It improves my performance and speed. no 
 you may need to fetch an image from server. but what will happen if image's url will be wrong or not complete. the image will crash. or on the other hand, an account don't have a profile, what should we do?
 
 so I use default image for users default profile image.
+
+### 4. Upload Image and upload progress
+
+actually uploading an image needs some efforts. like using `formData`, managing `headers`, setting `Content-Type` and etc.
+
+after that when we use `axios` it's a good time to use `onUploadProgress` for monitoring upload status specially for uploading files.

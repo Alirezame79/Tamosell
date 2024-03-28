@@ -19,6 +19,10 @@ export default function productId() {
   const [detalil, setDetail] = useState({})
   const [showDetail, setShowDetail] = useState(false)
 
+  function currencyFormat(num) {
+    return '$ ' + num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
+
   useEffect(()=> {
     async function fetchRequest() {
       try {
@@ -75,9 +79,9 @@ export default function productId() {
             event.target.src = "https://icons.veryicon.com/png/o/application/applet-1/product-17.png"
             event.onerror = null
           }}/>
-        <h2 className="text-2xl font-bold text-center">Product Name</h2>
-        <h3 className="text-xl text-center">Price</h3>
-        <h3 className="text-sm bg-orange-400 p-1 rounded-lg self-center text-center">Tag</h3>
+        <h2 className="text-2xl font-bold text-center">{product.Title}</h2>
+        {product.Price !== undefined && <h3 className="text-xl text-center">{currencyFormat(product.Price)}</h3>}
+        <h3 className="text-sm bg-orange-400 p-1 rounded-lg self-center text-center">{product.Tag}</h3>
         {showDetail && product.Tag === "Book" && <Book param={detalil} /> }
         {showDetail && product.Tag === "Electronic" && <Electronic param={detalil} />}
         {showDetail && product.Tag === "Writing" && <Writing param={detalil} />}
@@ -112,7 +116,7 @@ export default function productId() {
             }}/>
           <div className="flex flex-col w-3/5 gap-5 px-20 py-10">
             <h2 className="text-4xl font-bold">{product.Title}</h2>
-            <h3 className="text-2xl">{product.Price}</h3>
+            {product.Price !== undefined && <h3 className="text-2xl">{currencyFormat(product.Price)}</h3>}
             <h3 className="text-base bg-orange-300 p-1 rounded-lg self-start">{product.Tag}</h3>
             {showDetail && product.Tag === "Book" && <Book param={detalil} /> }
             {showDetail && product.Tag === "Electronic" && <Electronic param={detalil} />}
